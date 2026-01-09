@@ -5,19 +5,19 @@ listItems that logs all item names currently in the inventory.*/
 
 const inventory = []; //Array for inventory
 
-export const addInventory = (item) => {
-    inventory.push(item)
-    console.log(`Inventory Added: ${item}`);
+export const addInventory = (item) => { // function to add inventory
+    inventory.push(item)  //push item to iventory array
+    console.log(`Inventory Added: ${item}`); //display that inventory was successfully added.
 };
 
-export const removeInventory = (item) => {
-    let removedItem = false;
+export const removeInventory = (item) => { //function to remove inventory
+    let removedItem = false; //variable to determine if item is removed
 
-    for (let i = 0; i < inventory.length; i++) {
-        if (inventory[i] === item) {
-            removedItem = true;
-            inventory.splice(i, 1);
-            i--;
+    for (let i = 0; i < inventory.length; i++) { //loop through array
+        if (inventory[i] === item) { //if item exist in inventory
+            removedItem = true; 
+            inventory.splice(i, 1); //remove from array
+            i--; //remove one from array
         }
     }
     if (removedItem) {
@@ -28,10 +28,10 @@ export const removeInventory = (item) => {
     }
 };
 
-export const listInventory = (item) => {
+export const listInventory = (item) => { //function to display listed inventory
     console.log("Inventory List:");
 
-    for (const item of inventory){
+    for (const item of inventory){ //loops through array and display each item in inventory
         console.log(`- ${item}`);
     }
 };
